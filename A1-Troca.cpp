@@ -23,6 +23,8 @@ int main(){
     cout << "Primeiro numero: "<< x << "\n";
     cout << "Segundo numero: "<< y << "\n";
 
+    cout << "\n";
+
     return 0;
 }
 
