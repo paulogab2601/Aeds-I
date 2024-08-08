@@ -19,14 +19,7 @@ int main()
     hora = round(hora);
     minuto = minutos - (hora * 60);
 
-    if (minuto == 1)
-    {
-        cout << hora << " horas e " << minuto << " minuto." << endl;
-    }
-    else
-    {
-        cout << hora << " horas e " << minuto << " minutos." << endl;
-    }
+    cout << hora << " hora(s) e " << minuto << " minuto(s)." << endl;
 
     return 0;
 }
