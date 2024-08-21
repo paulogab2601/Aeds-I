@@ -9,8 +9,7 @@ int main(){
     hora = tempo/ 3600;
     min0 = tempo % 3600;
     minuto = min0 / 60;
-    min0 = min0 - (60*minuto);
-    segundo = min0;
+    segundo = min0 % 60;
 
     printf("%d, %d, %d", hora, minuto, segundo);
 
