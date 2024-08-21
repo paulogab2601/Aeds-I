@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int segundos, minutos, horas;
+    int segundos, minutos, horas, varAux;
     segundos = 0;
 
     while (segundos <= 0)
@@ -17,9 +17,10 @@ int main()
 
     cout << "\n";
 
-    horas = segundos / (60 * 60);
-    minutos = (segundos / 60) - (horas * 60);
-    segundos = segundos - (minutos * 60);
+    horas = segundos / 3600;
+    varAux = segundos % 3600;
+    minutos = varAux / 60;
+    segundos = varAux - (minutos * 60);
 
     cout << "Horas: " << horas << endl;
     cout << "Minutos: " << minutos << endl;
