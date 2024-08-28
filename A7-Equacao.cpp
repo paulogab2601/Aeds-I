@@ -14,7 +14,7 @@ int main()
 
     if (a == 0)
     {
-        std::cout << "A NÃO PODE SER 0!\n";
+        std::cout << "A NO PODE SER 0!\n";
     }
     
 
