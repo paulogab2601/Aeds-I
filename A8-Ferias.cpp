@@ -6,13 +6,13 @@ int main()
 {
 
     double distancia, chuva;
-    cout << "Digite a distancia e a probabilidade de chuva (0 -100): ";
+    cout << "Digite a distancia e a probabilidade de chuva (0 - 100): ";
     cin >> distancia >> chuva;
     cout << "\n";
 
-    if (distancia < 500)
+    if (distancia*2 < 500)
     {
-        if (distancia > 300 && chuva > 58)
+        if (distancia*2 > 300 && chuva > 58)
         {
             cout << "A viagem nao é viavel";
             exit(0);
