@@ -5,9 +5,7 @@ int main() {
     float y;
 
     // Leitura dos valores
-    printf("Digite um numero inteiro: ");
     scanf("%d", &x);
-    printf("Digite um numero em ponto flutuante: ");
     scanf("%f", &y);
 
     // Impressão dos valores formatados
@@ -18,15 +16,15 @@ int main() {
 
     printf("Octal: %o\n", x);
 
-    printf("Caractere: %c\n", x);
+    printf("Char: %c\n", x);
 
     printf("Com 6 casas decimais: %.6f\n", y);
 
     printf("Com 2 casas decimais: %.2f\n", y);
 
-    printf("Notação cientifica (lower): %.6e\n", y);
+    printf("Notação científica (lower): %.6e\n", y);
 
-    printf("Notação cientifica (upper): %.6E\n", y);
+    printf("Notação científica (upper): %.6E\n", y);
 
     return 0;
 }
