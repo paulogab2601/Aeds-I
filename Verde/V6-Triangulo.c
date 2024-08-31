@@ -11,15 +11,15 @@ int main()
     {
         if (x == y && y == z)
         {
-            printf("Equilatero");
+            printf("Triangulo equilatero");
         }
         else if (x == y || y == z || x == z)
         {
-            printf("Isosceles");
+            printf("Triangulo isosceles");
         }
         else
         {
-            printf("Escaleno\n");
+            printf("Triangulo escaleno\n");
         }
     }
     else
