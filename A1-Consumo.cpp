@@ -1,4 +1,4 @@
-// Aula 1 - Consumo
+// Aula 1 - Consumo de um carro e viagem
 
 #include <iostream>
 #include <string>
