@@ -32,4 +32,4 @@ double pow(double x, double y)
     }
 
     return resultado;
-}//Função POW de math.h (copia)
+} // Função POW de math.h (copia)
