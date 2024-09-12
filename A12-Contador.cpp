@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int F_validaNota(float nota);
+float F_calculaMedia(float soma, int count);
 
 int main()
 {
@@ -23,7 +24,7 @@ int main()
         }
     }
 
-    std::cout << "Media = " << soma / (count + 1); // Ajusta o contador
+    std::cout << "Media = " << F_calculaMedia(soma, count); // Calcula a média e exibe o resultado
 
     return 0;
 }
@@ -46,4 +47,9 @@ int F_validaNota(float nota)
         }
         return nota;
     }
+}
+
+float F_calculaMedia(float soma, int count)
+{
+    return (float)soma / (count + 1);
 }
