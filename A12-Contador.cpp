@@ -1,7 +1,7 @@
-//Fiz algo simples de uma maneira complexa, POG | Programação Orientada a Gambiarra
-
 #include <iostream>
 #include <stdlib.h>
+
+int F_validaNota(float nota);
 
 int main()
 {
@@ -14,30 +14,36 @@ int main()
         std::cout << "Digite a nota num " << count + 2 << " (Para sair digite um num negativo): ";
         std::cin >> nota;
 
-        if (nota > 10)
+        nota = F_validaNota(nota);
+
+        if (nota != -1 && nota != 0) // Pega o resultado de nota e toma decisão
         {
-            std::cout << "Notas devem estar no intervalo de 0-10!\n\n";
-            system("PAUSE");
-            system("CLS");
-        }
-        else
-        {
-            if (nota < 0)
-            {
-                nota = 0;
-                break;
-            }
             count++;
             soma += nota;
         }
-    }
-    if (count + 1 == 0)
-    {
-        std::cout << "Nenhuma nota valida foi inserida!\n\n";
-        exit(0);
     }
 
     std::cout << "Media = " << soma / (count + 1); // Ajusta o contador
 
     return 0;
+}
+
+int F_validaNota(float nota)
+{
+
+    if (nota > 10)
+    {
+        std::cout << "Notas devem estar no intervalo de 0-10!\n\n";
+        system("PAUSE");
+        system("CLS");
+        return 0;
+    }
+    else
+    {
+        if (nota <= -1)
+        {
+            return -1;
+        }
+        return nota;
+    }
 }
