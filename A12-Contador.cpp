@@ -23,6 +23,11 @@ int main()
             soma += nota;
         }
     }
+    if (count + 1 == 0)
+    {
+        std::cout << "Nao foram digitados valores validos!\n\n";
+        exit(0);
+    }
 
     std::cout << "Media = " << F_calculaMedia(soma, count); // Calcula a média e exibe o resultado
 
