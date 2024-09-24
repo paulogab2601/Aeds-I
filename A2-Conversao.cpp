@@ -10,7 +10,7 @@ int main()
 {
 
     int num;
-    cout << "Digite o numero na base decimal e ele sera convertido para binario!\n";
+    cout << "Digite o numero em decimal e ele sera convertido para binario!\n";
     cin >> num;
 
     string bin = converteBin(num);
