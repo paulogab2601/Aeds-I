@@ -13,7 +13,7 @@ int main()
 
     while (selector != 2)
     {
-        cout << "1- Calcular area e perimetro\n2- Sair\nDigite: ";
+        cout << "1- Calcula area e perimetro\n2- Sair\nDigite: ";
         cin >> selector;
         cin.ignore();
         if (selector == 2)

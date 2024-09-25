@@ -11,7 +11,7 @@ int main()
     int minutos = 0, minuto = 0;
     float hora = 0;
 
-    cout << "Digite um valor em minutos e ele sera convertido para horas: ";
+    cout << "Digite um valor em minutos para converter em horas: ";
     cin >> minutos;
     cout << endl;
 
