@@ -1,3 +1,4 @@
+//Aula 2 LAB- Função Pow
 #include <iostream>
 
 double pow(double x, double y);
