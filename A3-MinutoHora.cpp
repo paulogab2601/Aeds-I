@@ -22,4 +22,4 @@ int main()
     cout << hora << " hora(s) e " << minuto << " minuto(s)." << endl;
 
     return 0;
-}
+}//
