@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// Tá mais ou menos, mas o caminho é esse ai
 int **somaMatriz(int **matriz1, int **matriz2, int coluna1, int linha2);
 
 int main()
