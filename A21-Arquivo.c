@@ -4,7 +4,7 @@ int strleng(FILE *, int *);
 
 int main()
 {
-    int num_chars = 0, *count_A = 0;
+    int num_chars = 0, count_A = 0;
     FILE *arquivo = fopen("texto.txt", "r");
 
     num_chars = strleng(arquivo, &count_A);
@@ -23,10 +23,13 @@ int strleng(FILE *texto, int *count_A)
 
     while ((c = fgetc(texto)) != EOF)
     {
-        count++;
-        if (c == 'a' || c == 'A')
+        if (c != '\n')
         {
-            (*count_A)++;
+            count++;
+            if (c == 'a' || c == 'A')
+            {
+                (*count_A)++;
+            }
         }
     }
 
