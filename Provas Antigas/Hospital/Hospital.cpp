@@ -20,7 +20,7 @@ public:
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 
-paciente Excluir(paciente *vet_pac);
+void Excluir(paciente *vet_pac, int &t);
 paciente Cadastro();
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
@@ -82,18 +82,63 @@ paciente Cadastro()
         newPaciente.total_doencas--;
     }
 
+    cout << "Paciente cadastrado com sucesso!\n";
+
     return newPaciente;
 }
 
-paciente Excluir(paciente *vet_pac)
+void Excluir(paciente *vet_pac, int &t)
 {
-    
+    int idEx;
+    cout << "Digite o id do paciente a ser excluido: ";
+    cin >> idEx;
+
+    bool encontrado = false;
+    for (int i = 0; i < t; i++)
+    {
+        if (vet_pac[i].id == idEx)
+        {
+            // Excluir o paciente
+            vet_pac[i].genero = 'x';
+            vet_pac[i].id = 0;
+            vet_pac[i].total_doencas = 0;
+            vet_pac[i].nome = " ";
+
+            // Zerar as doenças
+            for (int j = 0; j < 100; j++)
+            {
+                vet_pac[i].doencas[j] = 0;
+            }
+
+            // Reorganiza o vetor
+            for (int j = i; j < t - 1; j++)
+            {
+                vet_pac[j] = vet_pac[j + 1];
+            }
+
+            // Atualiza o tamanho
+            t--;
+            encontrado = true;
+            break; // Encontrou e excluiu, sai do loop
+        }
+    }
+
+    if (encontrado)
+    {
+        cout << "Paciente excluido com sucesso!\n"
+             << endl;
+    }
+    else
+    {
+        cout << "Paciente nao encontrado!\n"
+             << endl;
+    }
 }
 
 void paciente::vis_pac()
 {
 
-    cout << "Nome:" << nome << "\nId: " << id << "\nNumero de comorbidades: " << total_doencas;
+    cout << "Nome:" << nome << "\nId: " << id << "\nNumero de comorbidades: " << total_doencas << "\n";
 }
 
 /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
@@ -102,7 +147,7 @@ int main()
 {
     int selector = 1;
     paciente *vet_pac = new paciente[MAX_PAC]; // Vetor com os pacientes
-    int pv_pac = 0;
+    int pv_pac = 0, idPac = 0;
 
     while (selector != 0)
     {
@@ -110,23 +155,53 @@ int main()
 
         cin >> selector;
 
+        system("CLS");
+
         switch (selector)
         {
         case 1:
             vet_pac[pv_pac] = Cadastro();
             pv_pac++;
+
+            system("PAUSE");
+            system("CLS");
             break;
 
         case 2:
-            cout << "\nFichas cadastradas: \n";
+            cout << "Fichas cadastradas: \n\n";
             for (int i = 0; i < pv_pac; i++)
             {
                 vet_pac[i].vis_pac();
                 cout << "\n";
             }
+
+            system("PAUSE");
+            system("CLS");
             break;
         case 3:
+            cout << "Digite o id do paciente: ";
+            cin >> idPac;
 
+            for (int i = 0; i < pv_pac; i++)
+            {
+                if (idPac == vet_pac[i].id)
+                {
+                    vet_pac[i].vis_pac();
+                }
+            }
+
+            system("PAUSE");
+            system("CLS");
+
+            break;
+        case 4:
+            Excluir(vet_pac, pv_pac);
+            system("PAUSE");
+            system("CLS");
+            break;
+        case 0:
+            exit(0);
+            break;
         default:
             cout << "Digite uma opcao valida!\n\n";
             break;
